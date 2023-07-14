@@ -26,7 +26,7 @@ FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# 从 React container 里复制构建出来的文件
+# 从 上一步的 container 里复制构建出来的文件
 COPY --from=builder /app/view/dist /home/web/dist
 
 # 添加运行权限
